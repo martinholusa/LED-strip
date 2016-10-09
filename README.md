@@ -17,6 +17,7 @@ K vyrobení obvodu pro ovládání LED diod potřebujete napájení. LED diody p
 
 Když jsme poslali některé ze tří kolíků na ESP8266 až vysoké, přepne tranzistor, dokončí okruh a rozsvítí odpovídající barvu. LED lze nastavit pouze na plný nebo úplné vypnutí, takže můžeme použít něco jako pulsní šířková modulace (PWM). PWM je v podstatě, že se zapne a vypne něco okolo stovky krát za sekundu. Takže v případě, že většinu času je to tak, pak LED objeví jasnější a naopak. Můžeme použít funkci analogWrite Arduino k ovládání intenzity nebo jasu.
 
+![ledstrips_schem](https://cloud.githubusercontent.com/assets/14974425/19220357/da5c5022-8e2b-11e6-8b64-d8e2dbe11d8b.png)
 
 ## URL
 http://jakebergamin.com/2016/02/08/wifi-led-strip/

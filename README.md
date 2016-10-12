@@ -26,4 +26,8 @@ http://trevorshp.com/creations/android_led.htm
 
 http://makezine.com/projects/android-arduino-led-strip-lights/
 
+
 https://www.aliexpress.com/item/V3-Wireless-module-NodeMcu-4M-bytes-Lua-WIFI-Internet-of-Things-development-board-based-ESP8266-for/32554198757.html?spm=2114.30010308.3.39.B7rbv2&ws_ab_test=searchweb0_0,searchweb201602_3_10056_10065_10068_10055_10054_10069_10059_10078_10079_10073_10017_10080_10070_10082_10081_10060_10061_10052_10062_10053_10050_10051,searchweb201603_3&btsid=2804e641-0f28-4f96-a73d-972d90f17ed7
+
+
+https://www.aliexpress.com/item/ESP8266-serial-wifi-wireless-control-ESP-202-test-panel-module-development-test-send-APP/32641032099.html?spm=2114.30010308.3.69.7nUQI4&ws_ab_test=searchweb0_0,searchweb201602_3_10056_10065_10068_10055_10054_10069_10059_10078_10079_10073_10017_10080_10070_10082_10081_10060_10061_10052_10062_10053_10050_10051,searchweb201603_3&btsid=5349eb0c-99f6-4d62-9299-38ae984e4e09

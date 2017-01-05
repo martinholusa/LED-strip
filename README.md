@@ -1,5 +1,5 @@
 # Ovládání LED pásků použitím WiFi
-
+![20161224_084756](https://cloud.githubusercontent.com/assets/14974425/21686999/c2d20ca4-d367-11e6-8ff9-544ee313400b.jpg)
  
 ## ÚVOD
 Většina pásků již mají svůj kontrolér, který má dálkový ovladač. Nicméně, aby byla připo-jena WiFi budeme dělat nový kontrolér. K ovládání těchto pásků potřebujeme mikrokont-rolér, některé tranzistory nebo MOSFET a WiFi. 

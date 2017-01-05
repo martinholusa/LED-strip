@@ -20,6 +20,7 @@ Po dokončení všech částí už jen zbývalo ho vyzkoušet v praxi. Zařízen
 #### 	2.1.1	PROCESOR
 ESP8266 NodeMCU V3 je jedním z nejlevnějších připojení WiFi moduly na trhu. V3 nebo Version3 je nejnovější verze tohoto modulu. Založeno na čipu ESP12-E.
 Piny: 15-pinů s přístupem k GPIO, SPI, UART, ADC, a napájecích kolíků.
+
 Parametry:
 
 -4MB FLASH paměť
@@ -42,6 +43,7 @@ LED pásky, které jsem použil jsou SMD 5050 LED diody. Jsou vyrobeny z pružn�
 Tranzistor je polovodičová součástka, kterou tvoří dvojice přechodů PN. Tranzistory jsou základní aktivní součástky, které se používají jako zesilovače, spínače a invertory. Jsou základem všech dnešních integrovaných obvodů, jako např. procesorů, pamětí atd.
 TIP31 tranzistory jsou označeny jako TIP31A, TIP31B,  TIP31C, TIP31.
 Pro svoji práci jsem použil tranzistory TIP31C.
+
 Parametry:
 
 -Napětí: 115V

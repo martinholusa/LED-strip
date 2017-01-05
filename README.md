@@ -21,6 +21,7 @@ Po dokončení všech částí už jen zbývalo ho vyzkoušet v praxi. Zařízen
 ESP8266 NodeMCU V3 je jedním z nejlevnějších připojení WiFi moduly na trhu. V3 nebo Version3 je nejnovější verze tohoto modulu. Založeno na čipu ESP12-E.
 Piny: 15-pinů s přístupem k GPIO, SPI, UART, ADC, a napájecích kolíků.
 Parametry:
+
 -4MB FLASH paměť
 
 -Komunikační napětí 3,3V
@@ -42,6 +43,7 @@ Tranzistor je polovodičová součástka, kterou tvoří dvojice přechodů PN. 
 TIP31 tranzistory jsou označeny jako TIP31A, TIP31B,  TIP31C, TIP31.
 Pro svoji práci jsem použil tranzistory TIP31C.
 Parametry:
+
 -Napětí: 115V
 
 -Proud: 3A
@@ -58,6 +60,7 @@ Arduino Software (IDE- Integrated Development Environment) obsahuje textový edi
 ## 3.	ZPŮSOBY ŘEŠENÍ A POUŽITÉ POSTUPY
 
 ### 3.1.  SEZNAM NUTNÝCH SOUČÁSTEK
+
 -ESP8266 nodeMCU V3
 
 -LED pásek SMD 5050

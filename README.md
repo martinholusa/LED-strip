@@ -53,13 +53,13 @@ Arduino Software (IDE- Integrated Development Environment) obsahuje textový edi
 ## 3.	ZPŮSOBY ŘEŠENÍ A POUŽITÉ POSTUPY
 
 ### 3.1.  SEZNAM NUTNÝCH SOUČÁSTEK
-•	ESP8266 nodeMCU V3
-•	LED pásek SMD 5050
-•	Konvertor 12V na 3,3V
-•	Adaptér na 12V
-•	3x Tranzistor TIP31C
-•	3x rezistor 10K Ω 
-•	Nepájivé kontaktní pole (později pájivé pole) 
+ •	ESP8266 nodeMCU V3
+ •	LED pásek SMD 5050
+ •	Konvertor 12V na 3,3V
+ •	Adaptér na 12V
+ •	3x Tranzistor TIP31C
+ •	3x rezistor 10K Ω 
+ •	Nepájivé kontaktní pole (později pájivé pole) 
 
 ### 3.2  SCHÉMA ZAPOJENÍ
 

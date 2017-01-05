@@ -24,9 +24,15 @@ Parametry:
 •	4MB FLASH paměť
 •	Komunikační napětí 3,3V
 •	Wireless 802.11 b/g/n
+![screenshot_1](https://cloud.githubusercontent.com/assets/14974425/21687625/56f00b5a-d36a-11e6-895a-fc49016041eb.png)
 
 #### 	2.1.2	LED PÁSKY
 LED pásky, které jsem použil jsou SMD 5050 LED diody. Jsou vyrobeny z pružného mate-riálu desky obvodů s přiléhajícími RGB LED diodami. Můžou se řezat podél předem urče-ných úsecích, takže si je naměříme podle sebe. Na pásu jsou čtyři dráty: 12V, R, G a B. Můžeme ovládat LED pásky tím, že dodáme pozitivních 12V na pin 12V a pak uzemníme kteroukoli jiný pin na dokončení obvodu, což způsobuje, že se rozsvítí odpovídající barva. Například, pokud jsme uzemnili R kolík pak se rozsvítí plnou červenou. Většina pásků již mají svůj kontrolér, který má dálkový ovladač. Nicméně, aby byla připojena WiFi budeme dělat nový kontrolér.
+
+![smd5050](https://cloud.githubusercontent.com/assets/14974425/21687630/5f601d7a-d36a-11e6-80fa-2e9e957e0315.jpg)
+
+![screenshot_2](https://cloud.githubusercontent.com/assets/14974425/21687634/626cc162-d36a-11e6-80bc-87163da70fb1.png)
+
 
 #### 	2.1.3	TRANZISTOR
 Tranzistor je polovodičová součástka, kterou tvoří dvojice přechodů PN. Tranzistory jsou základní aktivní součástky, které se používají jako zesilovače, spínače a invertory. Jsou základem všech dnešních integrovaných obvodů, jako např. procesorů, pamětí atd.
@@ -37,8 +43,12 @@ Parametry:
 •	Proud: 3A
 •	Výkon: 40W
 
+![screenshot_3](https://cloud.githubusercontent.com/assets/14974425/21687647/695e31ea-d36a-11e6-90d8-c637ecebea40.png)
+
 ### 2.2	Software
 Arduino Software (IDE- Integrated Development Environment) obsahuje textový editor pro psaní kódu, textovou konzoli, nástrojovou lištu s tlačítky pro společných funkcí a řadou nabídek. To se připojí k hardwaru, nahraje programy a komunikuje s nimi. Programy jsou zapsány v textovém editoru a jsou uloženy s příponou souboru .ino. Poskytuje zpětnou vazbu při ukládání a exportu a také zobrazuje chyby.
+ 
+ ![screenshot_4](https://cloud.githubusercontent.com/assets/14974425/21687649/6ba78c58-d36a-11e6-9432-4b98753912d7.png)
  
 ## 3.	ZPŮSOBY ŘEŠENÍ A POUŽITÉ POSTUPY
 
@@ -52,20 +62,9 @@ Arduino Software (IDE- Integrated Development Environment) obsahuje textový edi
 •	Nepájivé kontaktní pole (později pájivé pole) 
 
 ### 3.2  SCHÉMA ZAPOJENÍ
+
+![screenshot_5](https://cloud.githubusercontent.com/assets/14974425/21687653/6d483e04-d36a-11e6-9d74-9eff828b9ff8.png) 
  
-## 4.	VÝSLEDKY ŘEŠENÍ, VÝSTUPY, UŽIVATELSKÝ MANUÁL 
-
-### 4.1	UKÁZKA KÓDU
-
-V této části kódu se nastaví sériová linka, která poté vypíše odpočet a nastartuje se WiFi Access point, ke kterému se poté můžeme připojit telefonem nebo noteboo-kem. Sériová linka poté vypíše IP adresu, na kterou se připojíme přes prohlížeč a můžeme ovládat LED pásky.
-
-### 4.2	 Ukázka HTML 
-
-V této části kódu jsou vytvořeny tlačítka a posuvníky pro každou složku zvlášť: červená, zelená, modrá. Jsou nastaveny na hodnotu od 0 do 255 a poté posílá zada-nou barvu do mikrokontroléru.
-
-### 4.3	 Převod 12V na 3,3V
-Jelikož jsem nechtěl aby zařízení mělo 2 napájení, tak jsem musel vyřešit aby přes jeden adaptér, který je na 12V, šlo taky převést napětí na 3,3V. K tomu jsem použil modul, kterému dáme vstupní napětí 12V a výstupní bude podle nastavení od 0V do 5V. Výstupní napětí je jen 3,3V, tak jsem musel napájet dva vodiče na vstupní napětí 12V a pak je přivést k LED páskům.
-
 ## Závěr
 Cílem tohoto projektu bylo vytvoření funkčního kontroléru. Určené cíle byly splněny jako sestavení plošného spoje, vytvoření programu pro ovládání pásku a webové aplikace.
 Do budoucna by bylo možné vytvořit webovou aplikaci, kde by byla paleta barev a bylo by možné si vybrat jakoukoliv barvu bez posuvníků. 

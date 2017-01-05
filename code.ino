@@ -31,20 +31,6 @@ void turnoff() {
     anGreen = 0;
 }
 
-void blik(){
-  digitalWrite(LED_RED, anRed);
-  digitalWrite(LED_GREEN, anBlue);
-  digitalWrite(LED_BLUE, anGreen);
-  delay(1000);
-  
-  digitalWrite(LED_RED, 0);
-  digitalWrite(LED_GREEN, 0);
-  digitalWrite(LED_BLUE, 0); 
-  delay(1000); 
-  
-}
-
-
 
 void webSocketEvent(uint8_t num, WStype_t type, uint8_t * payload, size_t lenght) {
 

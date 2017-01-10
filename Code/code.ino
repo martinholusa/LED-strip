@@ -14,26 +14,15 @@
 
 #define BUTTON 5
 int buttonState = 0;
-
 int anRed = 0;
 int anGreen = 0;
 int anBlue = 0;
 
 ESP8266WiFiMulti WiFiMulti;
-
 ESP8266WebServer server = ESP8266WebServer(80);
 WebSocketsServer webSocket = WebSocketsServer(81);
 
-void turnoff() {
-
-    anRed = 0;
-    anBlue = 0;
-    anGreen = 0;
-}
-
-
 void webSocketEvent(uint8_t num, WStype_t type, uint8_t * payload, size_t lenght) {
-
     switch (type) {
         case WStype_DISCONNECTED:
             USE_SERIAL.printf("[%u] Disconnected!\n", num);
@@ -49,70 +38,51 @@ void webSocketEvent(uint8_t num, WStype_t type, uint8_t * payload, size_t lenght
             break;
         case WStype_TEXT:
             USE_SERIAL.printf("[%u] get Text: %s\n", num, payload);
-
-            if (payload[0] == '#') {
-                // we get RGB data
-
-                // decode rgb data
+            if (payload[0] == '#'){
                 uint32_t rgb = (uint32_t) strtol((const char *) &payload[1], NULL, 16);
-
                 anRed = map(((rgb >> 16) & 0xFF), 0, 255, 0, 1023);
                 anGreen = map(((rgb >> 8) & 0xFF), 0, 255, 0, 1023);
                 anBlue = map(((rgb >> 0) & 0xFF), 0, 255, 0, 1023);
             }
-
             break;
     }
+}
 
+//Funkce pro vypnutí tlačítka
+void turnoff(){
+    anRed = 0;
+    anBlue = 0;
+    anGreen = 0;
 }
 
 void setup() {
-    //USE_SERIAL.begin(921600);
     USE_SERIAL.begin(115200);
-
-    //USE_SERIAL.setDebugOutput(true);
-
     USE_SERIAL.println();
     USE_SERIAL.println();
     USE_SERIAL.println();
 
-    for (uint8_t t = 4; t > 0; t--) {
-        USE_SERIAL.printf("[SETUP] BOOT WAIT %d...\n", t);
-        USE_SERIAL.flush();
-        delay(1000);
-    }
-
-  
     pinMode(BUTTON, INPUT_PULLUP);
     attachInterrupt(digitalPinToInterrupt(BUTTON), turnoff, HIGH); //přerušení, definování pinu přerušení
 
+    //Nastavení pinu jako výstupní
     pinMode(LED_RED, OUTPUT);
     pinMode(LED_GREEN, OUTPUT);
     pinMode(LED_BLUE, OUTPUT);
 
-    digitalWrite(LED_RED, 1);
-    digitalWrite(LED_GREEN, 1);
-    digitalWrite(LED_BLUE, 1);
-
-
+    //Konfigurace WiFi
     WiFi.softAP("manin-led", "12345678");
     IPAddress myIP = WiFi.softAPIP();
     USE_SERIAL.print("AP IP address: ");
     USE_SERIAL.println(myIP);
-
-    // start webSocket server
     webSocket.begin();
     webSocket.onEvent(webSocketEvent);
-
     if (MDNS.begin("esp8266")) {
         USE_SERIAL.println("MDNS responder started");
     }
 
-
-
     server.on("/", []() {
-        // send index.html
-        // replace for better looking
+        // posílá index.html
+        //vytvoření webové aplikace
         server.send(200, "text/html",
 "                <html><head><script>"
 "                var connection = new WebSocket('ws://'+location.hostname+':81/', ['arduino']);"
@@ -127,19 +97,19 @@ void setup() {
 "                if(r.length < 2) { r = '0' + r; }   "
 "                if(g.length < 2) { g = '0' + g; }  "
 "                if(b.length < 2) { b = '0' + b; }   "
-"                var rgb = '#'+r+g+b;    "
+"                var rgb = '#'+b+g+r;    "
 "                console.log('RGB: ' + rgb); "
 "                connection.send(rgb); }"
 
 "                function off(){"
 "                r = '0'; g = '0'; b = '0'; "
-"                var rgb = '#'+r+g+b;    "
+"                var rgb = '#'+b+g+r;    "
 "                console.log('RGB: ' + rgb);"
 "                connection.send(rgb);}"
 
 "                function on(){"
 "                r = 'ff';g = 'ff';b = 'ff'; "
-"                var rgb = '#'+r+g+b;    "
+"                var rgb = '#'+b+g+r; "
 "                console.log('RGB: ' + rgb);"
 "                connection.send(rgb); }"
 
@@ -147,38 +117,38 @@ void setup() {
 "                r = Math.floor((Math.random() * 255) + 0);  "
 "                g = Math.floor((Math.random() * 255) + 0);  "
 "                b = Math.floor((Math.random() * 255) + 0); "
-"                var rgb = '#'+r+g+b;    "
+"                var rgb = '#'+b+g+r; "
 "                console.log('RGB: ' + rgb); "
 "                connection.send(rgb); }"
 
 "                function cer(){"
 "                  r = 'ff';g = '00';b = '00'; "
-"                  var rgb = '#'+r+g+b;    "
+"                  var rgb = '#'+b+g+r; "
 "                  console.log('RGB: ' + rgb);"
 "                  connection.send(rgb); }"
 "                function zel(){"
 "                  r = '00';g = 'ff';b = '00'; "
-"                  var rgb = '#'+r+g+b;    "
+"                  var rgb = '#'+b+g+r; "
 "                  console.log('RGB: ' + rgb);"
 "                  connection.send(rgb); }"
 "                function mod(){"
 "                  r = '00';g = '00';b = 'ff'; "
-"                  var rgb = '#'+r+g+b;    "
+"                  var rgb = '#'+b+g+r; "
 "                  console.log('RGB: ' + rgb);"
 "                  connection.send(rgb); }"
 "                function tyr(){"
 "                  r = '00';g = 'ff';b = 'ff'; "
-"                  var rgb = '#'+r+g+b;    "
+"                  var rgb = '#'+b+g+r; "
 "                  console.log('RGB: ' + rgb);"
 "                  connection.send(rgb); }"
 "                function ruz(){"
 "                  r = 'ff';g = '39';b = '99'; "
-"                  var rgb = '#'+r+g+b;    "
+"                  var rgb = '#'+b+g+r; "
 "                  console.log('RGB: ' + rgb);"
 "                  connection.send(rgb); }"
 "                function zlu(){"
 "                  r = 'ff';g = 'ff';b = '00'; "
-"                  var rgb = '#'+r+g+b;    "
+"                  var rgb = '#'+b+g+r; "
 "                  console.log('RGB: ' + rgb);"
 "                  connection.send(rgb); }"
 
@@ -236,8 +206,6 @@ void setup() {
     });
     
     server.begin();
-
-    // Add service to MDNS
     MDNS.addService("http", "tcp", 80);
     MDNS.addService("ws", "tcp", 81);
 
@@ -249,7 +217,6 @@ void setup() {
 void loop() {
     webSocket.loop();
     server.handleClient();
-
     analogWrite(LED_RED, anRed);
     analogWrite(LED_GREEN, anGreen);
     analogWrite(LED_BLUE, anBlue);
